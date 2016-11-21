@@ -17,29 +17,15 @@
           <label for="firstName">First Name</label>
           <input type="text" name="firstName" class="form-control" ng-model="sigmanaut.newPerson.firstName" placeholder="First Name"/>
         </div>
-        <div class="form-group col-md-6">
-          <label for="lastName">Last Name</label>
-          <input type="text" name="lastName" class="form-control" ng-model="sigmanaut.newPerson.lastName" placeholder="Last Name"/>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="username">Github Username</label>
-          <input type="text" name="username" class="form-control" ng-model="sigmanaut.newPerson.git_username" placeholder="Github Username"/>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="shoutout">Shoutout</label>
-          <input type="text" name="shoutout" class="form-control" ng-model="sigmanaut.newPerson.shoutout" placeholder="Shout Out"/>
-        </div>
-        <div class="col-md-12 form-group">
-          <button type="submit" class="btn btn-primary pull-right" ng-click="sigmanaut.createPerson()">Submit</button> <!-- Which function needs to be called on click? -->
-        </div>
+        <!-- What other fields do we need to ask for in order to get the information we need? -->
       </form>
     </section>
     <section class="container">
       <h3>Class List</h3>
       <ul class="list-group">
-        <li class="list-group-item" ng-repeat="person in sigmanaut.people"> <!-- What needs to be repeated? -->
+        <li class="list-group-item" ng-repeat=""> <!-- What needs to be repeated? -->
           <!-- TODO: Create a list item for everyone in the class -->
-          {{person.firstName}} {{person.lastName}} - {{person.shoutout}}<!-- include the other parameters for the person -->
+          {{person.firstName}}<!-- include the other parameters for the person -->
         </li>
       </ul>
     </section>
