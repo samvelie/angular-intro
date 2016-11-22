@@ -12,7 +12,7 @@
     <section class="container">
       <h1>Sigmanaut's angular list</h1>
       <h3>Add a new person</h3>
-      <form class="col-md-12">
+      <form>
         <div class="form-group col-md-6">
           <label for="firstName">First Name</label>
           <input type="text" name="firstName" class="form-control" ng-model="sigmanaut.newPerson.firstName" placeholder="First Name"/>
@@ -36,13 +36,22 @@
     </section>
     <section class="container">
       <h3>Class List</h3>
-      <input ng-model="sigmanaut.searchText" class="form-control">
-      <ul class="list-group">
-        <li class="list-group-item" ng-repeat="person in sigmanaut.people | filter: { firstName: sigmanaut.searchText }"> <!-- What needs to be repeated? -->
-          <!-- TODO: Create a list item for everyone in the class -->
-          <a ng-href="https://github.com/{{person.git_username}}">{{person.firstName}} {{person.lastName}} - {{person.shoutout}}</a><!-- include the other parameters for the person -->
-        </li>
-      </ul>
+      <div class="form-group col-md-6">
+        <label>Search First Name</label>
+        <input ng-model="sigmanaut.searchText.firstName" class="form-control" placeholder="Search First Name">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Search Last Name</label>
+        <input ng-model="sigmanaut.searchText.lastName" class="form-control" placeholder="Search Last Name">
+      </div>
+      <div class="col-md-12">
+        <ul class="list-group col-md-12">
+          <li class="list-group-item" ng-repeat="person in sigmanaut.people | filter: sigmanaut.searchText"> <!-- What needs to be repeated? -->
+            <!-- TODO: Create a list item for everyone in the class -->
+            <a ng-href="https://github.com/{{person.git_username}}">{{person.firstName}} {{person.lastName}} - {{person.shoutout}}</a><!-- include the other parameters for the person -->
+          </li>
+        </ul>
+      </div>
     </section>
   </main>
 </body>
