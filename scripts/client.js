@@ -1,7 +1,7 @@
-var sigmanautApp = angular.module('SigmanautApp', []);
+var phirePhiterApp = angular.module('PhirePhiterApp', []);
 
-sigmanautApp.controller('SigmanautController', function(){
-  console.log('Sigmanaut controller loaded');
+phirePhiterApp.controller('PhirePhiterController', function(){
+  console.log('PhirePhiter controller loaded');
 
   var self = this; // holds the value of this
 
